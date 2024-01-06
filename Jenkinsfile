@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "dockerbuilder"
+        label "java11"
     }
     stages {
         stage('SCM') {
