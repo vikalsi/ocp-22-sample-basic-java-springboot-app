@@ -15,22 +15,22 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('Test') {
+        stage('Test-1') {
             steps {
                 echo 'Testing..'
                 sh 'mvn test'
             }
         }
-        stage('Package') {
+        stage('Test-2') {
             steps {
-                echo 'Packaging....'
-                sh 'mvn package'
+                echo 'Testing....'
+                sh 'mvn test'
             }
         }
-                stage('Archiving') {
+                stage('Regression Testing') {
             steps {
-                echo 'Archiving JAR File....'
-                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+                 echo 'Testing....'
+                 sh 'mvn test'
             }
         }
     }
